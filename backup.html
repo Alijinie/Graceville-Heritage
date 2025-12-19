@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Graceville Heritage | Natural Tigernut Drinks & Vitality Powders</title>
+    <meta name="description" content="Discover premium African-inspired plant-based nutrition. Shop natural Tigernut energy drinks, date powders, and aphrodisiac blends. Sugar-free vitality boosters.">
+    <meta name="keywords" content="Tigernut drink, Date powder, Natural energy booster, African superfoods, Graceville Heritage, Plant-based vitality, Aphrodisiac foods">
+    <meta name="author" content="Graceville Heritage">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Graceville Heritage - Natural Strength Booster">
+    <meta property="og:description" content="Premium plant-based vitality. Try our Tigernut & Bitter Kola energy drinks.">
+    <meta property="og:type" content="website">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Store",
+      "name": "Graceville Heritage",
+      "description": "Natural plant-based vitality drinks.",
+      "telephone": "+447465800912",
+      "priceRange": "££"
+    }
+    </script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        grace: {
+                            dark: '#051f15',      // Deeper, richer green
+                            surface: '#0d2e21',   // Lighter surface green
+                            gold: '#fbbf24',
+                            goldLight: '#fde047',
+                            accent: '#84cc16',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'], // Swapped Poppins for Outfit (more modern/geometric)
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Utilities */
+        .glass {
+            background: rgba(13, 46, 33, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
+            border: 1px solid rgba(255,255,255,0.05);
+            backdrop-filter: blur(5px);
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Animations */
+        .fade-up { animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; transform: translateY(20px); }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Smooth image loading */
+        img { transition: opacity 0.3s ease-in-out; }
+    </style>
+</head>
+<body class="bg-grace-dark text-white font-sans min-h-screen flex flex-col selection:bg-grace-gold selection:text-black overflow-x-hidden">
+
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-grace-gold/10 rounded-full blur-[100px] mix-blend-screen"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-grace-accent/10 rounded-full blur-[120px] mix-blend-screen"></div>
+    </div>
+
+    <header class="fixed top-0 w-full z-40 px-6 py-4 transition-all duration-300" id="main-header">
+        <div class="max-w-7xl mx-auto glass rounded-full px-6 py-3 flex justify-between items-center shadow-lg shadow-black/10">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-grace-gold/50">
+                    <img src="https://placehold.co/100x100/fbbf24/000000?text=GH" alt="Logo" class="w-full h-full object-cover">
+                </div>
+                <div class="leading-none hidden sm:block">
+                    <span class="block text-sm font-bold tracking-widest text-white">GRACEVILLE</span>
+                    <span class="block text-[10px] text-grace-gold tracking-[0.2em] font-medium">HERITAGE</span>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <button onclick="switchView('home')" class="hover:text-grace-gold transition-colors">Home</button>
+                <button onclick="switchView('facts')" class="hover:text-grace-gold transition-colors">Nutrition Lab</button>
+                <a href="https://wa.me/447465800912" class="bg-white/10 hover:bg-white/20 text-white px-5 py-2 rounded-full transition-all">
+                    Contact Us
+                </a>
+            </div>
+
+            <div class="md:hidden flex items-center gap-3">
+                <button class="relative w-8 h-8 flex items-center justify-center rounded-full bg-white/5 border border-white/10">
+                    <i class="fa-solid fa-bag-shopping text-xs text-grace-gold"></i>
+                    <span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-grace-dark"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1 pt-28 pb-32 px-4 md:px-8 max-w-7xl mx-auto w-full">
+        
+        <section id="view-home" class="space-y-12">
+            
+            <div class="fade-up">
+                <div class="relative rounded-3xl overflow-hidden bg-grace-surface border border-white/5 shadow-2xl min-h-[400px] md:h-[450px] flex flex-col md:flex-row items-center">
+                    
+                    <div class="p-8 md:p-12 md:w-1/2 z-10 flex flex-col items-start justify-center h-full">
+                        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-grace-gold/20 text-grace-gold text-[10px] font-bold tracking-wider mb-4 border border-grace-gold/20">
+                            <span class="w-1.5 h-1.5 rounded-full bg-grace-gold animate-pulse"></span>
+                            AFRICAN SUPERFOODS
+                        </span>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] mb-4">
+                            Unlock Your <br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-grace-gold to-yellow-200">Inner Vitality</span>
+                        </h1>
+                        <p class="text-gray-400 text-sm md:text-base mb-8 max-w-md leading-relaxed">
+                            Experience the raw power of Tigernuts and Bitter Kola. 100% natural energy boosters, crafted without sugar or artificial additives.
+                        </p>
+                        <div class="flex gap-4">
+                            <button onclick="document.getElementById('products-grid').scrollIntoView({behavior: 'smooth'})" class="bg-grace-gold text-grace-dark px-8 py-3 rounded-full font-bold text-sm hover:scale-105 transition-transform shadow-[0_0_20px_rgba(251,191,36,0.3)]">
+                                Shop Now
+                            </button>
+                            <button onclick="switchView('facts')" class="px-6 py-3 rounded-full font-medium text-sm text-white border border-white/10 hover:bg-white/5 transition-colors flex items-center gap-2">
+                                <i class="fa-solid fa-flask text-grace-accent"></i> Science
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="md:w-1/2 w-full h-64 md:h-full relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-grace-surface via-transparent to-transparent z-10"></div>
+                        <img src="https://placehold.co/800x800/1a4130/ffffff?text=Natural+Vitality" class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700" alt="Hero">
+                    </div>
+                </div>
+            </div>
+
+            <div id="products-grid" class="fade-up delay-100">
+                <div class="flex justify-between items-end mb-6">
+                    <div>
+                        <h2 class="text-2xl font-bold text-white">Trending Now</h2>
+                        <p class="text-gray-500 text-xs mt-1">Customers favorite blends</p>
+                    </div>
+                    <a href="#" class="text-grace-gold text-sm hover:underline">View All</a>
+                </div>
+
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                    <article onclick="openProduct(0)" class="group glass-card rounded-2xl p-3 cursor-pointer relative hover:-translate-y-2 transition-transform duration-300">
+                        <div class="absolute top-3 left-3 z-10 bg-green-500/20 text-green-400 border border-green-500/30 text-[10px] font-bold px-2 py-0.5 rounded-md backdrop-blur-sm">
+                            SUGAR FREE
+                        </div>
+                        <div class="aspect-[4/5] bg-black/20 rounded-xl mb-4 overflow-hidden relative">
+                            <img src="https://placehold.co/400x500/1a4130/ffffff?text=Drink+Bottle" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Product">
+                            <button class="absolute bottom-3 right-3 w-8 h-8 bg-grace-gold rounded-full flex items-center justify-center text-grace-dark shadow-lg opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                        <h3 class="font-bold text-base truncate">Tigernut Energy</h3>
+                        <p class="text-xs text-gray-400 mb-2">Bitter Kola & Lemon</p>
+                        <div class="flex items-center gap-2">
+                            <span class="text-grace-gold font-bold">£3.50</span>
+                        </div>
+                    </article>
+
+                    <article onclick="openProduct(1)" class="group glass-card rounded-2xl p-3 cursor-pointer relative hover:-translate-y-2 transition-transform duration-300">
+                        <div class="absolute top-3 left-3 z-10 bg-orange-500/20 text-orange-400 border border-orange-500/30 text-[10px] font-bold px-2 py-0.5 rounded-md backdrop-blur-sm">
+                            BEST SELLER
+                        </div>
+                        <div class="aspect-[4/5] bg-black/20 rounded-xl mb-4 overflow-hidden relative">
+                            <img src="https://placehold.co/400x500/1a4130/ffffff?text=Powder+Bag" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Product">
+                            <button class="absolute bottom-3 right-3 w-8 h-8 bg-grace-gold rounded-full flex items-center justify-center text-grace-dark shadow-lg opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                        <h3 class="font-bold text-base truncate">Date Powder Blend</h3>
+                        <p class="text-xs text-gray-400 mb-2">Aphrodisiac Booster</p>
+                        <div class="flex items-center gap-2">
+                            <span class="text-grace-gold font-bold">£8.00</span>
+                        </div>
+                    </article>
+                     <article onclick="openProduct(0)" class="group glass-card rounded-2xl p-3 cursor-pointer relative hover:-translate-y-2 transition-transform duration-300">
+                        <div class="aspect-[4/5] bg-black/20 rounded-xl mb-4 overflow-hidden relative">
+                            <img src="https://placehold.co/400x500/1a4130/ffffff?text=Drink+Pack" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Product">
+                            <button class="absolute bottom-3 right-3 w-8 h-8 bg-grace-gold rounded-full flex items-center justify-center text-grace-dark shadow-lg opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                        <h3 class="font-bold text-base truncate">Family Pack</h3>
+                        <p class="text-xs text-gray-400 mb-2">6x Energy Drink</p>
+                        <div class="flex items-center gap-2">
+                            <span class="text-grace-gold font-bold">£18.00</span>
+                        </div>
+                    </article>
+
+                    <article onclick="openProduct(1)" class="group glass-card rounded-2xl p-3 cursor-pointer relative hover:-translate-y-2 transition-transform duration-300">
+                         <div class="aspect-[4/5] bg-black/20 rounded-xl mb-4 overflow-hidden relative">
+                            <img src="https://placehold.co/400x500/1a4130/ffffff?text=Bulk+Tub" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Product">
+                            <button class="absolute bottom-3 right-3 w-8 h-8 bg-grace-gold rounded-full flex items-center justify-center text-grace-dark shadow-lg opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                        <h3 class="font-bold text-base truncate">Pro Bulk Tub</h3>
+                        <p class="text-xs text-gray-400 mb-2">500g Powder</p>
+                        <div class="flex items-center gap-2">
+                            <span class="text-grace-gold font-bold">£35.00</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-4 pt-8 border-t border-white/5 fade-up delay-200">
+                <div class="text-center p-4">
+                    <i class="fa-solid fa-leaf text-2xl text-grace-accent mb-2"></i>
+                    <p class="text-xs font-bold text-gray-300">100% Plant</p>
+                </div>
+                <div class="text-center p-4 border-l border-r border-white/5">
+                    <i class="fa-solid fa-truck-fast text-2xl text-grace-gold mb-2"></i>
+                    <p class="text-xs font-bold text-gray-300">UK Shipping</p>
+                </div>
+                <div class="text-center p-4">
+                    <i class="fa-solid fa-shield-heart text-2xl text-red-400 mb-2"></i>
+                    <p class="text-xs font-bold text-gray-300">Secure Pay</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="view-facts" class="hidden space-y-8 fade-up">
+            <div class="text-center mb-8">
+                <span class="text-grace-accent text-xs font-bold tracking-widest uppercase">The Science</span>
+                <h2 class="text-3xl font-bold mt-2">Nutritional <span class="text-grace-gold">Breakdown</span></h2>
+            </div>
+
+            <div class="flex bg-white/5 p-1 rounded-full mb-8 max-w-sm mx-auto backdrop-blur-md">
+                <button onclick="updateCharts('drink')" id="btn-drink" class="flex-1 bg-grace-gold text-grace-dark font-bold py-2.5 rounded-full text-xs transition-all shadow-lg">Energy Drink</button>
+                <button onclick="updateCharts('powder')" id="btn-powder" class="flex-1 text-gray-400 font-bold py-2.5 rounded-full text-xs hover:text-white transition-all">Powder Blend</button>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="glass-card rounded-3xl p-6 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-grace-accent/10 rounded-bl-full"></div>
+                    <h3 class="text-sm font-bold mb-6 flex items-center gap-2">
+                        <span class="w-2 h-6 bg-grace-gold rounded-full"></span> Macronutrients
+                    </h3>
+                    <div class="h-64 relative flex justify-center">
+                        <canvas id="macroChart"></canvas>
+                        <div class="absolute inset-0 flex items-center justify-center pointer-events-none flex-col">
+                            <span class="text-2xl font-bold text-white" id="cal-center">70</span>
+                            <span class="text-[10px] text-gray-400">KCAL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-3xl p-6">
+                    <h3 class="text-sm font-bold mb-6 flex items-center gap-2">
+                        <span class="w-2 h-6 bg-grace-accent rounded-full"></span> Key Minerals (mg)
+                    </h3>
+                    <div class="h-64 relative">
+                        <canvas id="mineralChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-grace-gold/20 to-grace-surface rounded-2xl p-6 border border-grace-gold/20 relative overflow-hidden">
+                <i class="fa-solid fa-lightbulb absolute top-4 right-4 text-grace-gold/30 text-4xl"></i>
+                <h4 class="text-lg font-bold text-grace-gold mb-2">Did you know?</h4>
+                <p id="fact-text" class="text-sm text-gray-300 leading-relaxed relative z-10">
+                    Tigernuts are actually tubers, not nuts! They are rich in prebiotic fiber which fuels the good bacteria in your gut.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <nav class="md:hidden fixed bottom-6 left-1/2 transform -translate-x-1/2 w-[90%] max-w-sm z-50">
+        <div class="glass rounded-full px-6 py-4 flex justify-between items-center shadow-2xl shadow-black/50">
+            <button onclick="switchView('home')" id="nav-home" class="flex flex-col items-center text-grace-gold w-12 transition-all hover:scale-110">
+                <i class="fa-solid fa-house text-lg mb-1"></i>
+            </button>
+            <button onclick="switchView('facts')" id="nav-facts" class="flex flex-col items-center text-white/50 hover:text-white transition-all w-12 hover:scale-110">
+                <i class="fa-solid fa-flask text-lg mb-1"></i>
+            </button>
+            <div class="w-px h-8 bg-white/10"></div>
+            <a href="https://wa.me/447465800912" class="flex flex-col items-center text-white/50 hover:text-green-400 transition-all w-12 hover:scale-110">
+                <i class="fa-brands fa-whatsapp text-xl mb-1"></i>
+            </a>
+            <a href="tel:+447465800912" class="flex flex-col items-center text-white/50 hover:text-blue-400 transition-all w-12 hover:scale-110">
+                <i class="fa-solid fa-phone text-lg mb-1"></i>
+            </a>
+        </div>
+    </nav>
+
+    <div id="product-modal" class="fixed inset-0 z-50 hidden" aria-modal="true">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity duration-300 opacity-0" id="modal-backdrop" onclick="closeModal()"></div>
+        
+        <div class="absolute bottom-0 md:top-1/2 md:left-1/2 md:bottom-auto md:-translate-x-1/2 md:-translate-y-1/2 w-full md:w-[800px] h-[85vh] md:h-auto bg-grace-surface md:rounded-3xl rounded-t-3xl shadow-2xl transform transition-transform duration-300 translate-y-full md:translate-y-10 scale-95 opacity-0 flex flex-col md:flex-row overflow-hidden border border-white/10" id="modal-panel">
+            
+            <div class="relative h-64 md:h-auto md:w-5/12 bg-black">
+                <img id="modal-img" src="" alt="Product" class="w-full h-full object-cover opacity-90">
+                <div class="absolute inset-0 bg-gradient-to-t from-grace-surface via-transparent to-transparent md:bg-gradient-to-r"></div>
+                <button onclick="closeModal()" class="absolute top-4 right-4 md:hidden z-20 bg-black/50 text-white w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-md">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="flex-1 p-6 md:p-10 flex flex-col h-full overflow-y-auto no-scrollbar">
+                <div class="flex justify-between items-start mb-2">
+                    <span id="modal-tag" class="text-[10px] font-bold tracking-widest bg-grace-gold text-grace-dark px-2 py-1 rounded">ENERGY</span>
+                    <button onclick="closeModal()" class="hidden md:flex text-gray-400 hover:text-white transition-colors">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+                
+                <h2 id="modal-title" class="text-2xl md:text-3xl font-bold text-white mb-1">Product Title</h2>
+                <p id="modal-tagline" class="text-grace-gold text-sm mb-6 font-medium">Naturally Sourced Vitality</p>
+
+                <div class="grid grid-cols-3 gap-3 mb-6">
+                    <div class="bg-white/5 rounded-xl p-3 text-center border border-white/5">
+                        <i class="fa-solid fa-fire text-grace-accent mb-1 text-sm"></i>
+                        <p id="stat-1" class="text-xs font-bold text-gray-200">70 kcal</p>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-3 text-center border border-white/5">
+                        <i class="fa-solid fa-leaf text-green-400 mb-1 text-sm"></i>
+                        <p id="stat-2" class="text-xs font-bold text-gray-200">Plant</p>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-3 text-center border border-white/5">
+                        <i class="fa-solid fa-bottle-water text-blue-400 mb-1 text-sm"></i>
+                        <p id="stat-3" class="text-xs font-bold text-gray-200">250ml</p>
+                    </div>
+                </div>
+
+                <div class="space-y-4 mb-8 text-sm text-gray-300 leading-relaxed">
+                    <div>
+                        <h3 class="text-white font-bold mb-1">Description</h3>
+                        <p id="modal-desc">Description text...</p>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-bold mb-1">Ingredients</h3>
+                        <p id="modal-ingredients" class="text-xs text-gray-400">List...</p>
+                    </div>
+                </div>
+
+                <div class="mt-auto flex gap-4">
+                    <a href="https://wa.me/447465800912" class="flex-1 bg-gradient-to-r from-grace-gold to-yellow-400 text-grace-dark font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 hover:shadow-[0_0_20px_rgba(251,191,36,0.4)] transition-all transform hover:-translate-y-1">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Order on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data Store
+        const products = [
+            {
+                title: "Tigernut Energy",
+                tagline: "Natural Strength Booster",
+                tag: "ENERGY",
+                image: "https://placehold.co/400x500/1a4130/ffffff?text=Drink+Bottle", 
+                stats: ["70 kcal", "No Sugar", "250ml"],
+                desc: "A premium, plant-based vitality drink inspired by African wellness traditions. Smooth, naturally sweet, and caffeine-free.",
+                ingredients: "Water, Tigernut Extract (20%), Date Syrup (10%), Bitter Kola Extract (2%), Lemon Juice."
+            },
+            {
+                title: "Date Powder",
+                tagline: "Aphrodisiac Blend",
+                tag: "SUPERFOOD",
+                image: "https://placehold.co/400x500/1a4130/ffffff?text=Powder+Bag",
+                stats: ["High Fiber", "100% Nat", "100g"],
+                desc: "Natural strength booster! A versatile powder blend perfect for smoothies, baking, or raw consumption.",
+                ingredients: "100% Tigernuts and Dates blend. No additives."
+            }
+        ];
+
+        // Chart Setup
+        Chart.defaults.color = '#9ca3af';
+        Chart.defaults.font.family = 'Outfit';
+        Chart.defaults.scale.grid.color = 'rgba(255,255,255,0.03)';
+        
+        let macroChartInstance = null;
+        let mineralChartInstance = null;
+
+        const nutritionalData = {
+            drink: {
+                macros: [1.2, 2.9, 0.5, 1.0], 
+                minerals: [15, 0, 0], 
+                labels: ['Sodium', 'Potassium', 'Magnesium'],
+                fact: "Our drink is caffeine-free and relies on the natural sugars of Dates and the energy boosting properties of Bitter Kola."
+            },
+            powder: {
+                macros: [5, 60, 8, 15], 
+                minerals: [550, 60, 12], 
+                labels: ['Potassium', 'Magnesium', 'Vit C'],
+                fact: "Packed with 15g of Fiber per 100g! This blend supports gut health and provides sustained clean energy."
+            }
+        };
+
+        function initCharts(type) {
+            const ctxMacro = document.getElementById('macroChart').getContext('2d');
+            const ctxMineral = document.getElementById('mineralChart').getContext('2d');
+            const data = nutritionalData[type];
+
+            if (macroChartInstance) macroChartInstance.destroy();
+            if (mineralChartInstance) mineralChartInstance.destroy();
+
+            // Doughnut Chart (Macros)
+            macroChartInstance = new Chart(ctxMacro, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Protein', 'Carbs', 'Fat', 'Fiber'],
+                    datasets: [{
+                        data: data.macros,
+                        backgroundColor: ['#fbbf24', '#84cc16', '#0f291e', '#ffffff'],
+                        borderWidth: 0,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    cutout: '75%', // Thinner ring
+                    plugins: { legend: { display: false } }
+                }
+            });
+
+            // Bar Chart (Minerals)
+            mineralChartInstance = new Chart(ctxMineral, {
+                type: 'bar',
+                data: {
+                    labels: data.labels,
+                    datasets: [{
+                        label: 'mg',
+                        data: data.minerals,
+                        backgroundColor: '#fbbf24',
+                        borderRadius: 6,
+                        barThickness: 20
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { display: true } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+
+            document.getElementById('fact-text').innerText = data.fact;
+        }
+
+        // View Navigation Logic
+        function switchView(viewName) {
+            const homeView = document.getElementById('view-home');
+            const factsView = document.getElementById('view-facts');
+            const navHome = document.getElementById('nav-home');
+            const navFacts = document.getElementById('nav-facts');
+
+            // Scroll to top when switching
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            if(viewName === 'home') {
+                homeView.classList.remove('hidden');
+                factsView.classList.add('hidden');
+                
+                // Update Nav State
+                navHome.className = "flex flex-col items-center text-grace-gold w-12 transition-all scale-110";
+                navFacts.className = "flex flex-col items-center text-white/50 hover:text-white transition-all w-12";
+            } else {
+                homeView.classList.add('hidden');
+                factsView.classList.remove('hidden');
+                
+                navFacts.className = "flex flex-col items-center text-grace-gold w-12 transition-all scale-110";
+                navHome.className = "flex flex-col items-center text-white/50 hover:text-white transition-all w-12";
+                
+                // Init charts if not already done
+                if(!macroChartInstance) updateCharts('drink');
+            }
+        }
+
+        function updateCharts(type) {
+            // Button Styles
+            const activeClass = "flex-1 bg-grace-gold text-grace-dark font-bold py-2.5 rounded-full text-xs transition-all shadow-lg transform scale-105";
+            const inactiveClass = "flex-1 text-gray-400 font-bold py-2.5 rounded-full text-xs hover:text-white transition-all";
+
+            document.getElementById('btn-drink').className = type === 'drink' ? activeClass : inactiveClass;
+            document.getElementById('btn-powder').className = type === 'powder' ? activeClass : inactiveClass;
+            
+            initCharts(type);
+        }
+
+        // Modal Logic with Animation
+        const modal = document.getElementById('product-modal');
+        const backdrop = document.getElementById('modal-backdrop');
+        const panel = document.getElementById('modal-panel');
+
+        function openProduct(index) {
+            const p = products[index] || products[0]; // Fallback
+            
+            // Populate Data
+            document.getElementById('modal-title').innerText = p.title;
+            document.getElementById('modal-tagline').innerText = p.tagline;
+            document.getElementById('modal-tag').innerText = p.tag;
+            document.getElementById('modal-img').src = p.image;
+            document.getElementById('modal-desc').innerText = p.desc;
+            document.getElementById('modal-ingredients').innerText = p.ingredients;
+            document.getElementById('stat-1').innerText = p.stats[0];
+            document.getElementById('stat-2').innerText = p.stats[1];
+            document.getElementById('stat-3').innerText = p.stats[2];
+
+            // Show Modal
+            modal.classList.remove('hidden');
+            
+            // Trigger Animation (slight delay to allow display:block to apply)
+            setTimeout(() => {
+                backdrop.classList.remove('opacity-0');
+                
+                // Reset transform classes for animation
+                panel.classList.remove('translate-y-full', 'scale-95', 'opacity-0');
+                // Desktop specific reset handled by media query CSS, but specifically removing the transform
+                panel.classList.remove('md:translate-y-10'); 
+            }, 10);
+        }
+
+        function closeModal() {
+            // Reverse Animation
+            backdrop.classList.add('opacity-0');
+            panel.classList.add('translate-y-full', 'scale-95', 'opacity-0', 'md:translate-y-10');
+
+            // Wait for animation to finish before hiding
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+    </script>
+</body>
+</html>
